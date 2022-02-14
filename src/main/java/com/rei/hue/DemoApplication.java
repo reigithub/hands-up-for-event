@@ -10,7 +10,7 @@ import org.springframework.stereotype.*;
 // import org.springframework.boot.builder.SpringApplicationBuilder;
 // import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-@EntityScan("com.rei.hue.entity")
+@EntityScan("com.rei.hue.model")
 @EnableJpaRepositories("com.rei.hue.repository") 
 @SpringBootApplication // (scanBasePackages = {"com.rei.hue.controller"})
 @Controller

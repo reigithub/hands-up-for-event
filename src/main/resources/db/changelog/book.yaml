@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: rei
+      changes:
+        - dropTable:
+            tableName: book
+        - createTable:
+            tableName: book
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+              - column:
+                  name: isbn
+                  type: varchar(50)
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: publisher
+                  type: varchar(100)
+              - column:
+                  name: price
+                  type: int
+              - column:
+                  name: publication_date
+                  type: datetime
+              - column:
+                  name: created_user
+                  type: varchar(100)
+              - column:
+                  name: created_at
+                  type: datetime
+              - column:
+                  name: updated_user
+                  type: varchar(100)
+              - column:
+                  name: updated_at
+                  type: datetime
+              - column:
+                  name: deleted_user
+                  type: varchar(100)
+              - column:
+                  name: deleted_at
+                  type: datetime
+        - sql:
+          sql: INSERT INTO book (id, name, isbn, description, publisher, price, publication_date, created_user, created_at, updated_user, updated_at, deleted_user, deleted_at) VALUES (1, 'テスト太郎', 'isbn001', 'desc001', 'pub001', '1000', '2018-07-21 09:55:04', 'user001', '2018-07-22', 'user001', '2018-07-22', 'user001', '2018-07-22');
+        - sql:
+          sql: INSERT INTO book (id, name, isbn, description, publisher, price, publication_date, created_user, created_at, updated_user, updated_at, deleted_user, deleted_at) VALUES (2, 'テスト太郎', 'isbn003', 'desc001', 'pub001', '1000', '2019-07-21 09:55:04', 'user001', '2019-07-22', 'user001', '2018-07-22', 'user001', '2018-07-22');
+        - sql:
+          sql: INSERT INTO book (id, name, isbn, description, publisher, price, publication_date, created_user, created_at, updated_user, updated_at, deleted_user, deleted_at) VALUES (3, 'テスト太郎', 'isbn016', 'desc001', 'pub001', '1000', '2018-08-21 09:55:04', 'user001', '2018-08-22', 'user001', '2018-07-22', 'user001', '2018-07-22');
+        - sql:
+          sql: INSERT INTO book (id, name, isbn, description, publisher, price, publication_date, created_user, created_at, updated_user, updated_at, deleted_user, deleted_at) VALUES (4, 'テスト太郎', 'isbn027', 'desc001', 'pub021', '1000', '2020-07-21 09:55:04', 'user001', '2020-07-22', 'user001', '2018-07-22', 'user001', '2018-07-22');
+        - sql:
+          sql: INSERT INTO book (id, name, isbn, description, publisher, price, publication_date, created_user, created_at, updated_user, updated_at, deleted_user, deleted_at) VALUES (5, 'テスト太郎', 'isbn118', 'desc001', 'pub301', '1000', '2018-10-21 09:55:04', 'user001', '2018-10-22', 'user001', '2018-07-22', 'user001', '2018-07-22');
+        - sql:
+          sql: INSERT INTO book (id, name, isbn, description, publisher, price, publication_date, created_user, created_at, updated_user, updated_at, deleted_user, deleted_at) VALUES (6, 'テスト太郎', 'isbn987', 'desc001', 'pub011', '1000', '2022-07-21 09:55:04', 'user001', '2022-07-22', 'user001', '2018-07-22', 'user001', '2018-07-22');

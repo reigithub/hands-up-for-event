@@ -1,13 +1,8 @@
-package com.rei.hue.entity;
+package com.rei.hue.model;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Data;
 import lombok.AllArgsConstructor;
@@ -20,27 +15,26 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id",nullable = false)
     private Integer id;
 
-    @Column(name = "name")
+    // @Column(name = "name")
     private String name;
 
-    @Column(name = "address")
+    // @Column(name = "address")
     private String address;
 
-    @Column(name = "phone")
+    // @Column(name = "phone")
     private String phone;
 
-    @Column(name = "update_date")
+    // @Column(name = "update_date")
     private Date update_date;
 
-    @Column(name = "create_date")
+    // @Column(name = "create_date")
     private Date create_date;
 
-    @Column(name = "delete_date")
+    // @Column(name = "delete_date")
     private Date delete_date;
 }
