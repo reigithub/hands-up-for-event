@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: rei
+      changes:
+        - createTable:
+            tableName: user
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+              - column:
+                  name: address
+                  type: varchar(255)
+              - column:
+                  name: phone
+                  type: varchar(50)
+              - column:
+                  name: update_date
+                  type: datetime
+              - column:
+                  name: create_date
+                  type: datetime
+              - column:
+                  name: delete_date
+                  type: datetime
+        - sql:
+          sql: INSERT INTO user (id, name, address, phone, update_date, create_date) VALUES (1, 'テスト太郎', '東京都Z市B区1-1', '080-9610-0340', '2021-04-06 12:45:43', '2018-07-21 09:55:04');
+        - sql:
+          sql: INSERT INTO user (id, name, address, phone, update_date, create_date) VALUES (2, 'テスト次郎', '東京都F市H区1-2', '090-0330-3780', '2020-08-06 23:12:05', '2019-05-01 10:11:12');
+        - sql:
+          sql: INSERT INTO user (id, name, address, phone, update_date, create_date) VALUES (3, 'テスト花子', '東京都G市E区2-1', '070-0104-1650', '2019-05-31 11:05:56', '2019-05-01 21:08:20');
+        - sql:
+          sql: INSERT INTO user (id, name, address, phone, update_date, create_date) VALUES (4, 'テスト士朗', '東京都A市K区3-2', '080-0560-0997', '2022-01-06 09:08:55', '2019-05-01 12:00:00');

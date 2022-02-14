@@ -1,0 +1,61 @@
+plugins {
+	id("org.springframework.boot") version "2.6.3"
+	id("io.spring.dependency-management") version "1.0.11.RELEASE"
+	id("org.liquibase.gradle") version "2.1.0"
+	id("java")
+	id("jacoco")
+}
+
+group = "com.rei.hue"
+version = ""
+
+jar {
+	enabled = true
+	// baseName = "hue"
+
+	manifest {
+		attributes "Main-Class" : "org.springframework.boot.loader.JarLauncher"
+	 	attributes "Start-Class" : "com.rei.hue.DemoApplication"
+	}
+}
+
+task("stage") {
+	dependsOn.add("clean")
+  	dependsOn.add("build")
+}
+build.mustRunAfter clean
+
+springBoot {
+    buildInfo()
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+
+	compileOnly("org.projectlombok:lombok")
+	annotationProcessor("org.projectlombok:lombok")
+
+	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
+	implementation("org.springframework.boot:spring-boot-actuator")
+	implementation("org.liquibase:liquibase-core")
+	runtimeOnly("mysql:mysql-connector-java")
+
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
+}
+
+test {
+    useJUnitPlatform()
+}
+gradle.taskGraph.whenReady {
+  taskGraph ->
+    if (taskGraph.hasTask(stage)) {
+      test.enabled = false
+    }
+}
