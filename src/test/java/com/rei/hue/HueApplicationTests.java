@@ -4,7 +4,7 @@ package com.rei.hue;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class HueApplicationTests {
 
 	// @Test
 	// void contextLoads() {

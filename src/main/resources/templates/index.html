@@ -1,14 +1,19 @@
 <!DOCTYPE HTML>
-<html lang="ja" xmlns:th="http://www.thymeleaf.org">
-    <head th:replace="header::head(~{::title})">
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="common/head :: head_fragment(title = 'hue.rei.com', scripts = ~{::script}, links = ~{::link})"></head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Getting Started: Serving Web Content</title>
-        <link href="/css/list.css" rel="stylesheet"></link>
     </head>
     <body>
-        <header th:replace="header::header"></header>
-        <h1>HOME</h1>
-        <a href="user/list">ユーザーリスト</a>
-        <a href="book/add">書籍登録</a>
+        <div class="container">
+            <h1>Hands Up for Event</h1>
+            <div class="btn-toolbar">
+                <div class="btn-group">
+                    <a th:href="@{/user/list}" class="btn btn-primary">ユーザー</a>
+                    <a th:href="@{/game/list}" class="btn btn-secondary">ゲーム</a>
+                    <a th:href="@{/event/list}" class="btn btn-primary">イベント</a>
+                </div>   
+            </div>   
+        </div>
     </body>
 </html>

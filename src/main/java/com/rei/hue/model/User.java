@@ -1,6 +1,7 @@
 package com.rei.hue.model;
 
-import java.sql.Date;
+import java.util.Date;
+import java.io.Serializable;
 
 import javax.persistence.*;
 
@@ -14,27 +15,16 @@ import lombok.NoArgsConstructor;
 @Table(name = "user")
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id",nullable = false)
-    private Integer id;
+    private Long id;
 
-    // @Column(name = "name")
     private String name;
-
-    // @Column(name = "address")
     private String address;
-
-    // @Column(name = "phone")
     private String phone;
-
-    // @Column(name = "update_date")
     private Date update_date;
-
-    // @Column(name = "create_date")
     private Date create_date;
-
-    // @Column(name = "delete_date")
     private Date delete_date;
 }

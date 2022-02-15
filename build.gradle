@@ -15,7 +15,7 @@ jar {
 
 	manifest {
 		attributes "Main-Class" : "org.springframework.boot.loader.JarLauncher"
-	 	attributes "Start-Class" : "com.rei.hue.DemoApplication"
+	 	attributes "Start-Class" : "com.rei.hue.HueApplication"
 	}
 }
 
@@ -45,6 +45,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	implementation("org.springframework.boot:spring-boot-actuator")
 	implementation("org.liquibase:liquibase-core")
+	//implementation("org.liquibase.ext:liquibase-hibernate5:4.7.1")
 	runtimeOnly("mysql:mysql-connector-java")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
